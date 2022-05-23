@@ -3,10 +3,9 @@ project(model_pkg)
 
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  rospy
-  std_msgs
-)
+  	     roscpp
+  	     rospy
+  	     std_msgs)
 
 ###################################
 ## catkin specific configuration ##
@@ -16,7 +15,7 @@ catkin_package()
 ###########
 ## Build ##
 ###########
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-)
+include_directories(${catkin_INCLUDE_DIRS})
 
+add_executable(samplenode src/samplenode.cpp)
+target_link_libraries(samplenode ${catkin_LIBRARIES})
