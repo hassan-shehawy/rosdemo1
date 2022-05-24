@@ -19,3 +19,6 @@ include_directories(${catkin_INCLUDE_DIRS})
 
 add_executable(samplenode src/samplenode.cpp)
 target_link_libraries(samplenode ${catkin_LIBRARIES})
+
+add_executable(samplesub src/samplesub.cpp)
+target_link_libraries(samplesub ${catkin_LIBRARIES})
