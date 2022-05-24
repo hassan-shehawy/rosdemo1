@@ -1,0 +1,4 @@
+<launch>
+	<node name="numpub" pkg= "model_pkg" type= "samplenode" />
+	<node name="numsubscale" pkg= "model_pkg" type= "samplesub" />
+</launch>
