@@ -8,9 +8,11 @@ int main(int argc, char **argv)
 	ros::Publisher pub_obj = nh.advertise<std_msgs::Float64>("sample_topic",1);
 	std_msgs::Float64 msg;
 	msg.data=0;
+	ros::Rate sleeper(1);
 	while(ros::ok)
 	{
 		msg.data+=0.01;
 		pub_obj.publish(msg);
+		sleeper.sleep();
 	}
 } 

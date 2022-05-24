@@ -144,4 +144,56 @@ data: 139.76
 data: 139.77
 
 
+## SAMPLE NODE IN C++ VER 2
+Code modified as:
+#include <ros/ros.h>
+#include <std_msgs/Float64.h>
+
+int main(int argc, char **argv)
+{
+	ros::init(argc, argv, "samplenode");
+	ros::NodeHandle nh;
+	ros::Publisher pub_obj = nh.advertise<std_msgs::Float64>("sample_topic",1);
+	std_msgs::Float64 msg;
+	msg.data=0;
+	ros::Rate sleeper(1);
+	while(ros::ok)
+	{
+		msg.data+=0.01;
+		pub_obj.publish(msg);
+		sleeper.sleep();
+	}
+} 
+## INTERACTION
+hassan$rostopic hz /sample_topic 
+subscribed to [/sample_topic]
+no new messages
+average rate: 1.000
+	min: 1.000s max: 1.000s std dev: 0.00000s window: 2
+average rate: 1.000
+	min: 1.000s max: 1.000s std dev: 0.00016s window: 3
+average rate: 1.000
+	min: 1.000s max: 1.000s std dev: 0.00013s window: 4
+average rate: 1.000
+	min: 1.000s max: 1.000s std dev: 0.00012s window: 5
+
+hassan$rostopic bw /sample_topic 
+subscribed to [/sample_topic]
+average: 13.01B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 2
+average: 10.76B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 3
+average: 9.90B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 4
+average: 9.45B/s
+	mean: 8.00B min: 8.00B max: 8.00B window: 5
+hassan$rostopic echo /sample_topic
+data: 0.02
+---
+data: 0.03
+---
+data: 0.04
+---
+data: 0.05
+
 
