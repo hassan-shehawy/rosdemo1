@@ -22,3 +22,6 @@ target_link_libraries(samplenode ${catkin_LIBRARIES})
 
 add_executable(samplesub src/samplesub.cpp)
 target_link_libraries(samplesub ${catkin_LIBRARIES})
+
+add_executable(samclass src/samclass.cpp)
+target_link_libraries(samclass ${catkin_LIBRARIES})
