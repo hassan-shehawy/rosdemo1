@@ -5,12 +5,23 @@ project(model_pkg)
 find_package(catkin REQUIRED COMPONENTS
   	     roscpp
   	     rospy
-  	     std_msgs)
+  	     std_msgs
+  	     message_generation)
+
+################################################
+## Declare ROS messages, services and actions ##
+################################################
+add_message_files(FILES
+		  samsg.msg)
+
+generate_messages(DEPENDENCIES
+		  std_msgs)
 
 ###################################
 ## catkin specific configuration ##
 ###################################
-catkin_package()
+catkin_package(CATKIN_DEPENDS message_runtime)
+
 
 ###########
 ## Build ##
@@ -25,3 +36,6 @@ target_link_libraries(samplesub ${catkin_LIBRARIES})
 
 add_executable(samclass src/samclass.cpp)
 target_link_libraries(samclass ${catkin_LIBRARIES})
+
+add_executable(samcustmsgpub src/samcustmsgpub.cpp)
+target_link_libraries(samcustmsgpub ${catkin_LIBRARIES})
