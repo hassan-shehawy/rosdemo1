@@ -14,6 +14,9 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(FILES
 		  samsg.msg)
 
+add_service_files(FILES
+		  samserv.srv)
+
 generate_messages(DEPENDENCIES
 		  std_msgs)
 
@@ -26,7 +29,7 @@ catkin_package(CATKIN_DEPENDS message_runtime)
 ###########
 ## Build ##
 ###########
-include_directories(${catkin_INCLUDE_DIRS})
+include_directories(${catkin_INCLUDE_DIRS} include)
 
 add_executable(samplenode src/samplenode.cpp)
 target_link_libraries(samplenode ${catkin_LIBRARIES})
@@ -39,3 +42,6 @@ target_link_libraries(samclass ${catkin_LIBRARIES})
 
 add_executable(samcustmsgpub src/samcustmsgpub.cpp)
 target_link_libraries(samcustmsgpub ${catkin_LIBRARIES})
+
+add_executable(samserv src/samserv.cpp)
+target_link_libraries(samserv ${catkin_LIBRARIES})

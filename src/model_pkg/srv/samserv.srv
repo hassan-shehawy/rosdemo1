@@ -1,0 +1,5 @@
+string status
+---
+bool camonoff
+int32 procid
+string desc
