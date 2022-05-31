@@ -6,7 +6,8 @@ find_package(catkin REQUIRED COMPONENTS
   	     roscpp
   	     rospy
   	     std_msgs
-  	     message_generation)
+  	     message_generation
+	     actionlib_msgs)
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -17,8 +18,12 @@ add_message_files(FILES
 add_service_files(FILES
 		  samserv.srv)
 
+add_action_files(FILES
+		  samact.action)
+
 generate_messages(DEPENDENCIES
-		  std_msgs)
+		  std_msgs
+		  actionlib_msgs)
 
 ###################################
 ## catkin specific configuration ##
