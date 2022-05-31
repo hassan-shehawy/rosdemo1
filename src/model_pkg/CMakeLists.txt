@@ -45,3 +45,6 @@ target_link_libraries(samcustmsgpub ${catkin_LIBRARIES})
 
 add_executable(samserv src/samserv.cpp)
 target_link_libraries(samserv ${catkin_LIBRARIES})
+
+add_executable(samclient src/samclient.cpp)
+target_link_libraries(samclient ${catkin_LIBRARIES})
