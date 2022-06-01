@@ -61,3 +61,5 @@ target_link_libraries(sampactservr ${catkin_LIBRARIES})
 add_executable(sampactclient src/sampactclient.cpp)
 target_link_libraries(sampactclient ${catkin_LIBRARIES})
 
+add_executable(pullparam src/pullparam.cpp)
+target_link_libraries(pullparam ${catkin_LIBRARIES})

@@ -1,0 +1,5 @@
+<launch>
+	<rosparam command="load" file="$(find model_pkg)/parms/pidgains.yaml" />
+	<node name="pullparam" pkg= "model_pkg" type= "pullparam" />
+</launch>
+
