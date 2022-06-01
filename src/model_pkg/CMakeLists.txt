@@ -7,7 +7,8 @@ find_package(catkin REQUIRED COMPONENTS
   	     rospy
   	     std_msgs
   	     message_generation
-	     actionlib_msgs)
+	     actionlib_msgs
+	     actionlib)
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -53,3 +54,10 @@ target_link_libraries(samserv ${catkin_LIBRARIES})
 
 add_executable(samclient src/samclient.cpp)
 target_link_libraries(samclient ${catkin_LIBRARIES})
+
+add_executable(sampactservr src/sampactservr.cpp)
+target_link_libraries(sampactservr ${catkin_LIBRARIES})
+
+add_executable(sampactclient src/sampactclient.cpp)
+target_link_libraries(sampactclient ${catkin_LIBRARIES})
+
